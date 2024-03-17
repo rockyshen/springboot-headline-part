@@ -1,0 +1,32 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+# 连接池配置
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      username: root
+      password: AmRI3@n2
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://118.25.46.207:3306/sm_db
+
+
+# mybaits-plus配置
+mybatis-plus:
+  type-aliases-package: com.atguigu.pojo
+  global-config:
+    db-config:
+      logic-delete-field: isDeleted   # 全局逻辑删除
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+      id-type: auto    # 主键自增长
+      table-prefix: news_   # 设置表前缀
+
+# jwt配置
+jwt:
+  token:
+    tokenExpiration: 120            # 有效期
+    tokenSignKey: headline123456    # 签名秘钥，自定义
